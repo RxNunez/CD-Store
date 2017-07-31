@@ -54,13 +54,15 @@ public class App {
                             System.out.println(individualAlbum.albumname);
                             System.out.println(individualAlbum.year);
                             System.out.println(individualAlbum.price);
-
                         }
-
-
                     }
+                }else if (navigationChoice.equals("Exit")){
+                    System.out.println("Goodbye!");
+                    programRunning = false;
 
-
+                }
+                else {
+                    System.out.println("I'm sorry, we don't have your choice");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
