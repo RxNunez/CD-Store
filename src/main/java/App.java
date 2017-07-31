@@ -54,9 +54,42 @@ public class App {
                             System.out.println(individualAlbum.albumname);
                             System.out.println(individualAlbum.year);
                             System.out.println(individualAlbum.price);
+
                         }
                     }
-                }else if (navigationChoice.equals("Exit")){
+
+                } else if (navigationChoice.equals("Search Price Range")) {
+                    System.out.println("What is the album's budget price?");
+                    String stringUserAlbumPrice = bufferedReader.readLine();
+                    int userAlbumPrice = Integer.parseInt(stringUserAlbumPrice);
+                    System.out.println("Here are the albums we have for that price");
+                    for (Album individualAlbum : allAlbums) {
+                        if (individualAlbum.albumPrice(userAlbumPrice)) {
+                            System.out.println("________________");
+                            System.out.println(individualAlbum.artistname);
+                            System.out.println(individualAlbum.albumname);
+                            System.out.println(individualAlbum.year);
+                            System.out.println(individualAlbum.price);
+
+                        }
+                    }
+
+                } else if (navigationChoice.equals("Search Artist Name")) {
+                        System.out.println("What is the album's artist name?");
+                        String userAlbumArtistName = bufferedReader.readLine();
+                        System.out.println("Here are the albums we have for that artist");
+                        for (Album individualAlbum : allAlbums) {
+                            if (individualAlbum.albumArtistName(userAlbumArtistName)) {
+                                System.out.println("________________");
+                                System.out.println(individualAlbum.artistname);
+                                System.out.println(individualAlbum.albumname);
+                                System.out.println(individualAlbum.year);
+                                System.out.println(individualAlbum.price);
+
+                            }
+                        }
+
+                    } else if (navigationChoice.equals("Exit")){
                     System.out.println("Goodbye!");
                     programRunning = false;
 

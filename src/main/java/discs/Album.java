@@ -9,8 +9,16 @@ public class Album {
     public int year;
     public int price;
 
-    public boolean albumYear(int userAlbumYear){
+    public boolean albumYear(int userAlbumYear) {
         return (year == userAlbumYear);
+    }
+
+    public boolean albumPrice(int userAlbumPrice) {
+        return (price <= userAlbumPrice);
+    }
+
+    public boolean albumArtistName(String userAlbumArtistName){
+        return (artistname.equals(userAlbumArtistName));
     }
 
     public Album(String artistname, String albumname, int year, int price){
